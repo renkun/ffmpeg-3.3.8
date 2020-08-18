@@ -265,15 +265,15 @@ static void format_line(void *avcl, int level, const char *fmt, va_list vl,
                 if(type) type[0] = get_category(parent);
             }
         }
-        av_bprintf(part+1, "[%s @ %p] ",
-                 avc->item_name(avcl), avcl);
+//        av_bprintf(part+1, "[%s @ %p] ",
+//                 avc->item_name(avcl), avcl);
         if(type) type[1] = get_category(avcl);
 
-        if (flags & AV_LOG_PRINT_LEVEL)
-            av_bprintf(part+2, "[%s] ", get_level_str(level));
+//        if (flags & AV_LOG_PRINT_LEVEL)
+//            av_bprintf(part+2, "[%s] ", get_level_str(level));
     }
 
-    av_vbprintf(part+3, fmt, vl);
+//    av_vbprintf(part+3, fmt, vl);
 
     if(*part[0].str || *part[1].str || *part[2].str || *part[3].str) {
         char lastc = part[3].len && part[3].len <= part[3].size ? part[3].str[part[3].len - 1] : 0;
